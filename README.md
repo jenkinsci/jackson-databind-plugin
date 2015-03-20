@@ -1,0 +1,1 @@
+Plugin to pull in dependency on the Jackson parser data binding library (for JSON etc).

@@ -1,0 +1,16 @@
+target
+work
+
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea
+out
+
+/ui/node/
+/ui/node_modules/
+npm-debug.log
+
+demo/JENKINS_HOME/plugins/
+demo/snapshot/plugins/
