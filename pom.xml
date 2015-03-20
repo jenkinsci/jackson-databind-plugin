@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>jackson-databind</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>hpi</packaging>
 
     <name>Jackson Databind Plugin</name>
@@ -48,4 +48,19 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <!-- https://jira.codehaus.org/browse/MRELEASE-271 workaround -->
+                    <preparationGoals>clean install</preparationGoals>
+                    <tagNameFormat>cloudbees-workflow-@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>
