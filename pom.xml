@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>1.548</version>
+        <version>2.5</version>
         <relativePath />
     </parent>
     <groupId>org.jenkins-ci.plugins</groupId>
@@ -18,9 +18,9 @@
     
     <dependencies>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.5.0</version>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>jackson2-api</artifactId>
+            <version>2.5.5</version>
         </dependency>
     </dependencies>
     
@@ -34,8 +34,14 @@
         <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
         <url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
+ 
+    <properties>
+      <java.level>6</java.level>
+      <jenkins.version>1.580.1</jenkins.version>
+    </properties>
+
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
@@ -48,20 +54,4 @@
             <url>http://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <!-- https://jira.codehaus.org/browse/MRELEASE-271 workaround -->
-                    <preparationGoals>clean install</preparationGoals>
-                    <tagNameFormat>cloudbees-workflow-@{project.version}</tagNameFormat>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-    
 </project>
