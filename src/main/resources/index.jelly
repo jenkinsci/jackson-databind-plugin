@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-    Plugin to pull in dependency on the Jackson parser data binding library (for JSON etc).
+    <b>Deprecated</b>. Plugin to pull in dependency on the Jackson parser data binding library (for JSON etc).
 </div>

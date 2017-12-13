@@ -25,6 +25,9 @@ package org.jenkinsci.plugins.jacksondatabind;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import hudson.RestrictedSince;
+import org.kohsuke.accmod.Restricted;
+import org.kohsuke.accmod.restrictions.NoExternalUse;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +39,12 @@ import java.nio.charset.Charset;
 /**
  * JSON read/write utilities.
  * @author <a href="mailto:tom.fennelly@gmail.com">tom.fennelly@gmail.com</a>
+ * @deprecated The plugin is deprecated. All code should be migrated to
+ *             <a href="https://github.com/jenkinsci/jackson2-api-plugin">Jackson2 API Plugin</a>.
  */
+@Deprecated
+@Restricted(NoExternalUse.class)
+@RestrictedSince("2.8.10.1")
 public class JSONReadWrite {
 
     static final Charset UTF8 = Charset.forName("UTF-8");
